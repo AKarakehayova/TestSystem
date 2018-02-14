@@ -1,0 +1,134 @@
+body {
+  background: url('../school.png')
+}
+
+a {
+    font-weight: bold;
+    color: black;
+    text-decoration: none !important;
+}
+
+.loginForm{
+  font: 95% Arial, Helvetica, sans-serif;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 16px;
+  background:  #e6ccb3;
+}
+
+.loginForm.wide{
+  max-width: 1000px;
+}
+
+.homework-description {
+    word-wrap: break-word;
+    padding: 16px;
+}
+
+.centered-table{
+  font: 95% Arial, Helvetica, sans-serif;
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 16px;
+  background:  #e6ccb3;
+}
+
+td {
+    padding:0 15px 0 15px;
+}
+
+.centered-table.wide td {
+    padding:0 60px 0 60px;
+    width: 50%;
+}
+
+.submitted{
+    color: green;
+}
+
+.information{
+    color: #2f6280;
+}
+
+.warning{
+    color: #ff862a;
+}
+
+.danger{
+    color: red;
+}
+
+td {
+    padding:0 15px 0 15px;
+}
+
+button[type=submit] {
+    width: 100%;
+    background-color: #d2a479;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type=button] {
+    width: 100%;
+    background-color: #d2a479;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.success,
+input[type="password"],
+input[type="date"],
+input[type="text"]
+ {
+  display: block;
+  width: 100%;
+  margin-bottom: 4%;
+  padding: 3%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  font-weight: bold;
+  color: #D3D3D3;
+}
+
+textarea {
+    width: 100%;
+      margin-bottom: 4%;
+  font-weight: bold;
+
+  padding: 3%;
+    box-sizing: border-box;
+  border: 1px solid #ccc;
+    color: #D3D3D3;
+    resize: none;
+}
+
+.form-header {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 4%;
+}
+
+.centered-text {
+    word-wrap: break-word;
+    text-align: center;
+    padding: 16px;
+}
+
+.error {
+color: #D8000C;
+background-color: #FFBABA;
+}
+
+.success {
+color: #09d81a;
+background-color: #a8ffc2;
+}
