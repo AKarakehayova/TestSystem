@@ -125,8 +125,10 @@ class HomeworkRepository
             $errors[] = 'The start date can not be after the deadline!';
         }
 
-        if ($_FILES['homeworkFile']['type'] !== 'application/zip' && !$update) {
-            $errors[] = 'The test files must be zipped!';
+       if ($_FILES['homeworkFile']['type'] !== 'application/zip' && !$update) {
+            if ($_FILES['homeworkFile']['type'] !== 'application/octet-stream') {
+                $errors[] = 'The test files must be zipped!';
+            }
         }
 
         return $errors;
