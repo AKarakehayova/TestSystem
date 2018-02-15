@@ -19,7 +19,7 @@ foreach($content['homework'] as $homework){
     echo '<td>' . $homework['tests_rating'] .'</td>';
     echo '<td>' . $homework['admin_rating'] .'</td>';
     echo '<td>' . $homework['final_grade'] .'</td>';
-    echo '<td><a href="/admin/homework/' . $homework['homework_id'] . '/user/' . $homework['student_id'] . '">Click</a></td>';
+    echo '<td><a href="/admin/homework/' . $homework['homework_id'] . '/user/' . $homework['student_id'] . '">Edit</a></td>';
     echo '</tr>';
 }
 echo '</table>';

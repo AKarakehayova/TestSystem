@@ -33,7 +33,7 @@ class DB {
             $data = $statement->fetchAll(PDO::FETCH_ASSOC);
             return ['error' => false, 'data' => $data];
         } else if (explode(' ', $query)[0] == 'INSERT') {
-            return ['error' => false, 'data' => []]; //return success or smfin else
+            return ['error' => false, 'data' => []];
         }
     }
 

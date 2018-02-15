@@ -26,6 +26,7 @@ echo '<a href="/tests/' . $content['homework']['hw_uid'] . '/tests/upload.zip">D
 echo'<label for="homeworkFile">Upload New Tests</label>';
 echo'<input type="file" name="homeworkFile" >';
 echo'<button type="submit">Edit</button>';
+echo '<button type="button" class="testhomework" data-id="' . $content['homework']['id'] . '">Test</button>';
 echo'</form>';
 
 
@@ -39,7 +40,6 @@ echo '<th>Automatic Grade</th>';
 echo '<th>Admin Grade</th>';
 echo '<th>Final Grade</th>';
 echo '<th>Uploaded at</th>';
-echo '<th>Test manualy</th>';
 echo '</tr>';
 
 foreach($content['students'] as $student){
@@ -57,7 +57,6 @@ foreach($content['students'] as $student){
     echo '<td>' . $student['admin_rating'] . '</td>';
     echo '<td>' . $student['final_grade'] . '</td>';
     echo '<td>' . $student['uploaded_at'] . '</td>';
-    echo '<td><button type="button" class="testhomework" data-id="' . $content['homework']['id'] . '">Test</button></td>';
     echo '</a></tr>';
 }
 echo '</table>';

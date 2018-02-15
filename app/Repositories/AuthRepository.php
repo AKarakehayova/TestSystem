@@ -51,6 +51,11 @@ class AuthRepository
         $hashedPassword = crypt($data['password'], PASSWORD_HASH);
 
         if(empty($errors)){
+            $checkExistingUser = DB::getFirst('SELECT * FROM `users` WHERE `faculty_number` = ' . $data['faculty_number']);
+            if (!empty($checkExistingUser)) {
+                return ['error' => true, 'message' => ['This faculty number is already registered']];
+            }
+
              return DB::query('INSERT INTO users (`username`, `password`, `email`, `first_name`, `last_name`, `faculty_number`, `admin`, `created_at`)
           VALUES("' . $data['username'] . '","'  . $hashedPassword . '","'  . $data['email'] . '","'  . $data['first_name'] . '","'  . $data['last_name'] . '","' . $data['faculty_number'] . '", 0, "' . date("Y-m-d H:i:s") . '")');
         }

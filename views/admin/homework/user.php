@@ -1,6 +1,6 @@
 <?php
 
-$linkToFolder = 'tests/' . $content['homework']['hw_uid'] . '/' . $content['homework']['faculty_number'];
+$linkToFolder = '/tests/' . $content['homework']['hw_uid'] . '/' . $content['homework']['faculty_number'];
 
 echo '<div class="centered-text"><a target="_blank" href="' . $linkToFolder . '/tests/_output' . '">Homework Test Output</a></div>';
 echo '<div class="centered-text"><a target="_blank" href="' . $linkToFolder . '">Link to Homework</a></div>';

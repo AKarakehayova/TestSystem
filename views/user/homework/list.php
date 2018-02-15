@@ -7,10 +7,10 @@ echo '<th>Date Published</th>';
 echo '<th>Deadline</th>';
 echo '<th>Days Remaining</th>';
 echo '<th>Submitted</th>';
+echo '<th>Graded</th>';
 echo '</tr>';
 
 foreach($content['homework']['data'] as $homework){
-
     $now = time(); // or your date as well
     $deadline = strtotime($homework['deadline']);
     $date_diff = $deadline - $now;
@@ -18,7 +18,7 @@ foreach($content['homework']['data'] as $homework){
     $deadline_danger = '';
 
     $date_diff = round($date_diff / (60 * 60 * 24));
-    if ($homework['submitted']) {
+    if (!empty($homework['student_homework'])) {
         $deadline_style = 'submitted';
     }
     if ($date_diff >= 7) {
@@ -35,7 +35,12 @@ foreach($content['homework']['data'] as $homework){
     echo '<td>' . $homework['start_date'] . '</td>';
     echo '<td>' . $homework['deadline'] . '</td>';
     echo '<td>' . $date_diff . '</td>';
-    echo '<td>' . ($homework['submitted'] ? 'Yes' : 'No') . '</td>';
+    echo '<td>' . (!empty($homework['student_homework']) ? 'Yes' : 'No') . '</td>';
+    if (!empty($homework['student_homework'])) {
+        echo '<td>' . (!empty($homework['student_homework']['final_grade']) ? $homework['student_homework']['final_grade'] : 'No') . '</td>';
+    } else {
+        echo '<td>No</td>';
+    }
     echo '</tr>';
 }
 echo '</table>';

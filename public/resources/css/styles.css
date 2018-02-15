@@ -31,6 +31,7 @@ a {
   margin: 10px auto;
   padding: 16px;
   background:  #e6ccb3;
+  table-layout:fixed;
 }
 
 td {
@@ -39,7 +40,7 @@ td {
 
 .centered-table.wide td {
     padding:0 60px 0 60px;
-    width: 50%;
+    width: 40px;
 }
 
 .submitted{
@@ -56,10 +57,6 @@ td {
 
 .danger{
     color: red;
-}
-
-td {
-    padding:0 15px 0 15px;
 }
 
 button[type=submit] {

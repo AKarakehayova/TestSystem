@@ -8,7 +8,7 @@ if(!empty($_SESSION['redirect_params']['errors'])) {
     echo '</div>';
 }
     $homework = $content;
-    $now = time(); // or your date as well
+    $now = time();
     $deadline = strtotime($homework['deadline']);
     $date_diff = $deadline - $now;
     $homework['submitted'] = false;

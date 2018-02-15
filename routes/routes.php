@@ -43,6 +43,5 @@ Router::set('POST', 'user/homework/{id}', 'UserController', 'postHomework');
 Router::set('GET', 'test', 'TestController', 'testAll');
 Router::set('GET', 'test/homework/{id}', 'TestController', 'testHomework');
 
-//don't touch this
 Router::route();
 

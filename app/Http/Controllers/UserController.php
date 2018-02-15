@@ -59,7 +59,7 @@ class UserController extends Controller
         if($_FILES['homeworkFile']['size'] > 10000000) {
             Router::redirect('/user/homework/' . $id, ['errors' => ['Archive too big']]);
         }
-        //put in separate method prolly in homeworkuploadrepo
+
         $zip = new ZipArchive;
 
         //extracting uploaded files

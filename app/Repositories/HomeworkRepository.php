@@ -71,6 +71,11 @@ class HomeworkRepository
     }
 
     public function uploadUserHomework($id) {
+        $alreadySubmitted = DB::getFirst('SELECT * FROM `student_homework` WHERE `homework_id` = ' . $id . ' AND `student_id` = ' .  $_SESSION['user']['id']);
+        if(!empty($alreadySubmitted)) {
+            return [];
+        }
+
         DB::query('INSERT INTO `student_homework` (`homework_id`, `student_id`, `created_at`) 
                   VALUES(' . $id . ',' . $_SESSION['user']['id'] . ',"' . date("Y-m-d H:i:s") . '")');
     }
@@ -210,13 +215,7 @@ class HomeworkRepository
     public function userSubmittedHomework($userId, $homeworks)
     {
         foreach($homeworks['data'] as &$homework) {
-
-            $studentHomework = $this->getStudentHomework($userId, $homework['id']);
-            if (!empty($studentHomework)) {
-                $homework['submitted'] = true;
-            } else {
-                $homework['submitted'] = false;
-            }
+            $homework['student_homework'] = $this->getStudentHomework($userId, $homework['id']);
         }
 
         return $homeworks;
