@@ -106,7 +106,9 @@ class HomeworkRepository
         }
 
         if ($_FILES['homeworkFile']['type'] !== 'application/zip') {
-            $errors[] = 'Your homework must be zipped!';
+            if ($_FILES['homeworkFile']['type'] !== 'application/octet-stream') {
+                $errors[] = 'Your homework must be zipped!';
+            }
         }
 
         return $errors;
@@ -138,7 +140,7 @@ class HomeworkRepository
         $error = '';
 
         if ($_FILES['homeworkFile']['size'] !== 0) {
-            if ($_FILES['homeworkFile']['type'] === 'application/zip') {
+          if ($_FILES['homeworkFile']['type'] === 'application/zip' || $_FILES['homeworkFile']['type'] === 'application/octet-stream') {
                 $homeworkFolder = realpath(PATH_TO_TESTS_FOLDER . $folderId);
 
                 move_uploaded_file($_FILES['homeworkFile']['tmp_name'], $homeworkFolder .'/tests/upload.zip');
